@@ -9,6 +9,7 @@ import AddKasir from "./components/formDataKasir"
 import UpdateKasir from "./components/updateKasir"
 
 import TenanList from "./components/listTenan"
+import AddTenan from "./components/formDataTenan"
 
 import './App.css'
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/listKasir/addKasir" element={<AddKasir/>}/>
         <Route path="/listKasir/editKasir/:id" element={<UpdateKasir/>}/>
         <Route path="/listTenan" element={<TenanList/>}/>
+        <Route path="/listTenan/addTenan" element={<AddTenan/>}/>
       </Routes>
     </BrowserRouter>
   );
