@@ -1,0 +1,5 @@
+###
+GET http://localhost:3000/kasir
+
+###
+GET http://localhost:3000/kasir/KS21152401602

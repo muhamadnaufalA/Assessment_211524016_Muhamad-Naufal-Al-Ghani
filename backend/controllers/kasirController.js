@@ -9,6 +9,19 @@ export const getAllKasir = async(req, res) => {
     }
 }
 
+export const getKasirbyId = async(req, res) => {
+    try{
+        const response = await Kasir.findOne({
+            where:{
+                kodekasir: req.params.id
+            }
+        });
+        res.status(200).json(response);
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+
 export const createKasir = async(req, res) => {
     try{
         await Kasir.create(req.body);
