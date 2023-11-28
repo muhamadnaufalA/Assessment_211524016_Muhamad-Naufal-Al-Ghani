@@ -18,7 +18,7 @@ const getkasirs = async () =>{
 const deleteKasir = async (id) => {
     try{
         await axios.delete(`http://localhost:3000/kasir/${id}`);
-        getBarangs();
+        getkasirs();
     } catch (error) {
         console.log(error);
     }
