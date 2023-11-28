@@ -27,7 +27,7 @@ const Nota = db.define('nota', {
     freezeTableName: true
 });
 
-// Define associations
+// Define associations ..
 Kasir.hasMany(Nota);
 Nota.belongsTo(Kasir);
 

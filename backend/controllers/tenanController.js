@@ -2,7 +2,9 @@ import Tenan from "../models/tenanModel.js";
 
 export const getAllTenan = async(req, res) => {
     try{
-        const response = await Tenan.findAll();
+        const response = await Tenan.findAll({
+            order: [['kodetenan', 'ASC']], // Change 'ASC' to 'DESC' if you want descending order
+        });
         res.status(200).json(response);
     } catch (error) {
         console.log(error.message);

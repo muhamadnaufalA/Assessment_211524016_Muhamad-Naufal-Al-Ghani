@@ -2,7 +2,9 @@ import Barang from "../models/barangModel.js";
 
 export const getAllBarang = async(req, res) => {
     try{
-        const response = await Barang.findAll();
+        const response = await Barang.findAll({
+            order: [['kodebarang', 'ASC']], // Change 'ASC' to 'DESC' if you want descending order
+        });
         res.status(200).json(response);
     } catch (error) {
         console.log(error.message);

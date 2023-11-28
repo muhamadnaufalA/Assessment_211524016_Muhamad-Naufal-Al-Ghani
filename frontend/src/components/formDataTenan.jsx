@@ -42,7 +42,7 @@ const AddTenan = () => {
                         </div>
                     </div>
                     <div className="field">
-                        <label className="label">Nama Kasir</label>
+                        <label className="label">Nama Tenan</label>
                         <div className="control">
                             <input 
                             type="text" 
@@ -53,7 +53,7 @@ const AddTenan = () => {
                         </div>
                     </div>
                     <div className="field">
-                        <label className="label">HP Kasir</label>
+                        <label className="label">HP Tenan</label>
                         <div className="control">
                             <input 
                             type="text" 
