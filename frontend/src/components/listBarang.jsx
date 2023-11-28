@@ -52,7 +52,7 @@ const deleteUser = async (id) => {
                             <td>{barang.hargasatuan}</td>
                             <td>{barang.stok}</td>
                             <td>
-                                <Link to={`edit/${barang.kodebarang}`} className="button is-small is-info">Edit</Link>
+                                <Link to={`editBarang/${barang.kodebarang}`} className="button is-small is-info">Edit</Link>
                                 <button onClick={()=> deleteUser(barang.kodebarang)} className="button is-small is-danger">Delete</button>
                             </td>
                         </tr>

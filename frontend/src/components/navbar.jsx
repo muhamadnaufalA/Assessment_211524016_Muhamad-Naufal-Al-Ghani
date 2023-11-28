@@ -13,10 +13,13 @@ const Navbar = () => {
             <div className="navbar-menu">
                 <div className="navbar-start">
                     <a className="navbar-item" href="/">
-                        Home
+                        Barang
                     </a>
                     <a className="navbar-item" href="/about">
-                        About
+                        Kasir
+                    </a>
+                    <a className="navbar-item" href="/about">
+                        Tenan
                     </a>
                 </div>
             </div>

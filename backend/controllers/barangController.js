@@ -9,6 +9,19 @@ export const getAllBarang = async(req, res) => {
     }
 }
 
+export const getBarangbyId = async(req, res) => {
+    try{
+        const response = await Barang.findOne({
+            where:{
+                kodebarang: req.params.id
+            }
+        });
+        res.status(200).json(response);
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+
 export const createBarang = async(req, res) => {
     try{
         await Barang.create(req.body);

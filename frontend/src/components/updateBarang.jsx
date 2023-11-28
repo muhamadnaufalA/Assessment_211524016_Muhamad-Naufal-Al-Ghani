@@ -1,21 +1,25 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import axios from "axios";
 import Navbar from './navbar';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams} from 'react-router-dom';
 
-const AddBarang = () => {
-  const [kodeBarang, setKodeBarang] = useState("");
-  const [namaBarang, setNamaBarang] = useState("");
-  const [satuan, setSatuan] = useState("");
-  const [hargaSatuan, setHargaSatuan] = useState("");
-  const [stok, setSok] = useState("");
+const EditBarang = () => {
+    const [kodeBarang, setKodeBarang] = useState("");
+    const [namaBarang, setNamaBarang] = useState("");
+    const [satuan, setSatuan] = useState("");
+    const [hargaSatuan, setHargaSatuan] = useState("");
+    const [stok, setSok] = useState("");
+    const navigate = useNavigate();
+    const {id} = useParams();
 
-  const navigate = useNavigate();
+  useEffect(() => {
+    getBarangById();
+  }, []);
 
-  const inputBarang = async (e) =>{
+  const UpdateBarang = async (e) =>{
     e.preventDefault();
     try{
-        await axios.post('http://localhost:3000/barang', {
+        await axios.patch(`http://localhost:3000/barang/${id}`, {
             kodebarang : kodeBarang,
             namabarang : namaBarang,
             satuan : satuan,
@@ -26,6 +30,15 @@ const AddBarang = () => {
     }catch (error){
         console.log(error);
     }
+  };
+
+  const getBarangById = async () => {
+    const response = await axios.get(`http://localhost:3000/barang/${id}`);
+    setKodeBarang(response.data.kodebarang);
+    setNamaBarang(response.data.namabarang);
+    setSatuan(response.data.satuan);
+    setHargaSatuan(response.data.hargasatuan);
+    setSok(response.data.stok);
   }
 
   return (
@@ -33,7 +46,7 @@ const AddBarang = () => {
         <Navbar />
         <div className="columns mt-5 is-centered">
             <div className="column is-half">
-                <form onSubmit={inputBarang}>
+                <form onSubmit={UpdateBarang}>
                     <div className="field">
                         <label className="label">Kode Barang</label>
                         <div className="control">
@@ -91,7 +104,7 @@ const AddBarang = () => {
                     </div>
                     <div className="field">
                         <button type='submit' className='button is-success'>
-                            Add
+                            Update
                         </button>
                     </div>
                 </form>
@@ -101,4 +114,4 @@ const AddBarang = () => {
   )
 }
 
-export default AddBarang
+export default EditBarang;
