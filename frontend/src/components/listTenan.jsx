@@ -15,7 +15,7 @@ const getTenans = async () =>{
     setTenan(response.data);
 }
 
-const deleteTenan = async (id) => {
+const funcDeleteTenan = async (id) => {
     try{
         await axios.delete(`http://localhost:3000/tenan/${id}`);
         getTenans();
@@ -49,7 +49,7 @@ const deleteTenan = async (id) => {
                             <td>{tenan.hp}</td>
                             <td>
                                 <Link to={`editKasir/${tenan.kodetenan}`} className="button is-small is-info">Edit</Link>
-                                <button onClick={()=> deleteTenan(tenan.kodetenan)} className="button is-small is-danger">Delete</button>
+                                <button onClick={()=> funcDeleteTenan(tenan.kodetenan)} className="button is-small is-danger">Delete</button>
                             </td>
                         </tr>
                         ))}
