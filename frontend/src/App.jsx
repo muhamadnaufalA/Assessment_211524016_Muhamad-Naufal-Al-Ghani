@@ -4,6 +4,8 @@ import EditBarang from "./components/updateBarang"
 import AddBarang from "./components/formDataBarang" 
 import BarangList from "./components/listBarang"
 
+import KasirList from "./components/listKasir"
+
 import './App.css'
 
 function App() {
@@ -13,6 +15,7 @@ function App() {
         <Route path="/" element={<BarangList/>}/>
         <Route path="/addBarang" element={<AddBarang/>}/>
         <Route path="/editBarang/:id" element={<EditBarang/>}/>
+        <Route path="/listKasir" element={<KasirList/>}/>
       </Routes>
     </BrowserRouter>
   );

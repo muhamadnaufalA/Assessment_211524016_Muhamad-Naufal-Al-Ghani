@@ -15,7 +15,7 @@ const Navbar = () => {
                     <a className="navbar-item" href="/">
                         Barang
                     </a>
-                    <a className="navbar-item" href="/about">
+                    <a className="navbar-item" href="/listKasir">
                         Kasir
                     </a>
                     <a className="navbar-item" href="/about">

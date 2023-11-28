@@ -15,7 +15,7 @@ const getBarangs = async () =>{
     setBarang(response.data);
 }
 
-const deleteUser = async (id) => {
+const deleteBarang = async (id) => {
     try{
         await axios.delete(`http://localhost:3000/barang/${id}`);
         getBarangs();
@@ -53,7 +53,7 @@ const deleteUser = async (id) => {
                             <td>{barang.stok}</td>
                             <td>
                                 <Link to={`editBarang/${barang.kodebarang}`} className="button is-small is-info">Edit</Link>
-                                <button onClick={()=> deleteUser(barang.kodebarang)} className="button is-small is-danger">Delete</button>
+                                <button onClick={()=> deleteBarang(barang.kodebarang)} className="button is-small is-danger">Delete</button>
                             </td>
                         </tr>
                         ))}
