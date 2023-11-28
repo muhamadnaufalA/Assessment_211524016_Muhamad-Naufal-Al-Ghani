@@ -40,21 +40,21 @@ const deleteUser = async (id) => {
                             <th>satuan</th>
                             <th>hargasatuan</th>
                             <th>stok</th>
-                            {/* <th>Action</th> */}
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {barangs.map((barang, index) => (
-                        <tr key={barang.id}>
+                        {barangs.map((barang) => (
+                        <tr key={barang.kodebarang}>
                             <td>{barang.kodebarang}</td>
                             <td>{barang.namabarang}</td>
                             <td>{barang.satuan}</td>
                             <td>{barang.hargasatuan}</td>
                             <td>{barang.stok}</td>
-                            {/* <td>
-                                <Link to={`edit/${user.id}`} className="button is-small is-info">Edit</Link>
-                                <button onClick={()=> deleteUser(user.id)} className="button is-small is-danger">Delete</button>
-                            </td> */}
+                            <td>
+                                <Link to={`edit/${barang.kodebarang}`} className="button is-small is-info">Edit</Link>
+                                <button onClick={()=> deleteUser(barang.kodebarang)} className="button is-small is-danger">Delete</button>
+                            </td>
                         </tr>
                         ))}
                     </tbody>
