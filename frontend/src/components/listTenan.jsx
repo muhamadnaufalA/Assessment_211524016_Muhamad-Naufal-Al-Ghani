@@ -48,7 +48,7 @@ const funcDeleteTenan = async (id) => {
                             <td>{tenan.namatenan}</td>
                             <td>{tenan.hp}</td>
                             <td>
-                                <Link to={`editKasir/${tenan.kodetenan}`} className="button is-small is-info">Edit</Link>
+                                <Link to={`editTenan/${tenan.kodetenan}`} className="button is-small is-info">Edit</Link>
                                 <button onClick={()=> funcDeleteTenan(tenan.kodetenan)} className="button is-small is-danger">Delete</button>
                             </td>
                         </tr>

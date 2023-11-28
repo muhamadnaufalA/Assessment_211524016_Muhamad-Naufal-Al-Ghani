@@ -3,3 +3,9 @@ GET http://localhost:3000/kasir
 
 ###
 GET http://localhost:3000/kasir/KS21152401602
+
+###
+GET http://localhost:3000/tenan
+
+###
+GET http://localhost:3000/tenan/Dummy

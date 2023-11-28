@@ -13,7 +13,7 @@ export const getTenanbyId = async(req, res) => {
     try{
         const response = await Tenan.findOne({
             where:{
-                kodekasir: req.params.id
+                kodetenan: req.params.id
             }
         });
         res.status(200).json(response);
